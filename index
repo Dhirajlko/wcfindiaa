@@ -4,492 +4,389 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>We Care Foundation | Empowering Communities</title>
-  <!-- Font Awesome 6 (Free Icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Poppins & Inter blend -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#fefcf5;color:#1e2a3e;line-height:1.5;scroll-behavior:smooth;}
+    h1,h2,h3,.logo,.nav-links a,.btn,.donate-btn-nav{font-family:'Poppins','Inter',sans-serif;}
+    .container{max-width:1280px;margin:0 auto;padding:0 28px;}
+
+    /* ── HEADER ── */
+    header{background:rgba(255,255,245,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.06);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+    .navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;flex-wrap:wrap;gap:1rem;}
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo i{font-size:2rem;color:#e65c2e;background:#ffede5;padding:8px;border-radius:20px;}
+    .logo span{font-weight:800;font-size:1.55rem;letter-spacing:-0.3px;color:#1e3a2f;}
+    .logo span small{font-size:0.8rem;font-weight:500;display:block;letter-spacing:normal;color:#e65c2e;}
+    .nav-links{display:flex;gap:2rem;align-items:center;flex-wrap:wrap;}
+    .nav-links a{text-decoration:none;font-weight:600;color:#2c3e2f;transition:0.2s;font-size:1rem;}
+    .nav-links a:hover{color:#e65c2e;}
+
+    /* ══ DONATE BUTTON — ANIMATED ══ */
+    @keyframes donatePulse {
+      0%   { box-shadow: 0 0 0 0 rgba(230,92,46,0.55); }
+      60%  { box-shadow: 0 0 0 14px rgba(230,92,46,0); }
+      100% { box-shadow: 0 0 0 0 rgba(230,92,46,0); }
+    }
+    @keyframes heartBeat {
+      0%,100% { transform: scale(1); }
+      25%      { transform: scale(1.25); }
+      50%      { transform: scale(1); }
+      75%      { transform: scale(1.15); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes floatBtn {
+      0%,100% { transform: translateY(0px); }
+      50%      { transform: translateY(-4px); }
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #fefcf5;
-      color: #1e2a3e;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3, .logo, .nav-links a, .btn, .donate-btn-nav {
-      font-family: 'Poppins', 'Inter', sans-serif;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* header & navigation */
-    header {
-      background: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(0px);
-      background: rgba(255,255,245,0.98);
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo i {
-      font-size: 2rem;
-      color: #e65c2e;
-      background: #ffede5;
-      padding: 8px;
-      border-radius: 20px;
-    }
-    .logo span {
-      font-weight: 800;
-      font-size: 1.55rem;
-      letter-spacing: -0.3px;
-      color: #1e3a2f;
-    }
-    .logo span small {
-      font-size: 0.8rem;
-      font-weight: 500;
-      display: block;
-      letter-spacing: normal;
-      color: #e65c2e;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #2c3e2f;
-      transition: 0.2s;
-      font-size: 1rem;
-    }
-    .nav-links a:hover {
-      color: #e65c2e;
-    }
+    /* Nav donate button */
     .donate-btn-nav {
-      background: #e65c2e;
+      position: relative;
+      background: linear-gradient(135deg, #e65c2e, #ff8c42, #e65c2e);
+      background-size: 200% auto;
       color: white !important;
-      padding: 8px 20px;
+      padding: 10px 24px;
       border-radius: 40px;
-      transition: 0.2s;
-      box-shadow: 0 4px 8px rgba(230,92,46,0.2);
-    }
-    .donate-btn-nav:hover {
-      background: #c2451e;
-      transform: translateY(-2px);
-      color: white;
-    }
-
-    /* hero section */
-    .hero {
-      padding: 4rem 0 3rem;
-      background: linear-gradient(135deg, #fff6ed 0%, #fff9f0 100%);
-      border-bottom: 1px solid #ffead9;
-    }
-    .hero-grid {
-      display: flex;
-      flex-wrap: wrap;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      animation: donatePulse 2.2s infinite, shimmer 3s linear infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
+      gap: 8px;
+      letter-spacing: 0.3px;
+      font-family: 'Poppins', sans-serif;
     }
-    .hero-content {
-      flex: 1.2;
-    }
-    .hero-badge {
-      background: #ffede3;
-      display: inline-block;
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #e65c2e;
-      margin-bottom: 1.2rem;
-    }
-    .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1.2rem;
-      color: #1e3a2f;
-    }
-    .hero-content h1 span {
-      color: #e65c2e;
-      border-bottom: 3px solid #f8c4a0;
-    }
-    .hero-description {
-      font-size: 1.1rem;
-      color: #3a4f41;
-      margin-bottom: 2rem;
-      max-width: 90%;
-    }
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .btn-primary, .btn-outline {
+    .donate-btn-nav i { animation: heartBeat 1.4s ease infinite; }
+    .donate-btn-nav:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 10px 25px rgba(230,92,46,0.4); }
+
+    /* Primary donate button (hero & sections) */
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 14px 28px;
+      padding: 16px 34px;
       border-radius: 60px;
       font-weight: 700;
       text-decoration: none;
-      transition: 0.25s;
-      font-size: 1rem;
-    }
-    .btn-primary {
-      background: #e65c2e;
+      font-size: 1.05rem;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e65c2e 0%, #ff7043 50%, #e65c2e 100%);
+      background-size: 200% auto;
       color: white;
       border: none;
-      box-shadow: 0 8px 14px rgba(230,92,46,0.25);
+      cursor: pointer;
+      animation: donatePulse 2s infinite, shimmer 2.5s linear infinite;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
-    .btn-primary:hover {
-      background: #c2451e;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 20px rgba(230,92,46,0.3);
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -60%;
+      width: 40%; height: 200%;
+      background: rgba(255,255,255,0.18);
+      transform: skewX(-20deg);
+      animation: btnShine 2.8s ease-in-out infinite;
     }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #e65c2e;
-      color: #e65c2e;
+    @keyframes btnShine {
+      0%   { left: -60%; opacity: 0; }
+      30%  { opacity: 1; }
+      60%  { left: 130%; opacity: 0; }
+      100% { left: 130%; opacity: 0; }
     }
-    .btn-outline:hover {
-      background: #e65c2e;
+    .btn-primary i { animation: heartBeat 1.4s ease infinite; }
+    .btn-primary:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 14px 30px rgba(230,92,46,0.45); animation: shimmer 2.5s linear infinite; }
+
+    /* Floating fixed donate button */
+    .floating-donate {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 999;
+      background: linear-gradient(135deg, #e65c2e, #ff7a30);
       color: white;
-      transform: translateY(-2px);
+      border: none;
+      border-radius: 60px;
+      padding: 14px 26px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      animation: donatePulse 2s infinite, floatBtn 3s ease-in-out infinite;
+      box-shadow: 0 8px 24px rgba(230,92,46,0.45);
+      transition: transform 0.2s;
     }
+    .floating-donate:hover { transform: scale(1.07); }
+    .floating-donate i { animation: heartBeat 1.4s ease infinite; }
+
+    /* Mini donate button on cards */
+    .donate-mini-btn {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e65c2e, #ff7043);
+      border: none;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: white;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: donatePulse 2.5s infinite;
+    }
+    .donate-mini-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(230,92,46,0.35); }
+
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:transparent;border:2px solid #e65c2e;color:#e65c2e;padding:14px 28px;border-radius:60px;font-weight:700;text-decoration:none;transition:0.25s;font-size:1rem;font-family:'Poppins',sans-serif;}
+    .btn-outline:hover{background:#e65c2e;color:white;transform:translateY(-2px);}
+
+    /* ══ HERO — REDESIGNED ══ */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1e3a2f 0%, #2d5a3d 40%, #1a3028 100%);
+      padding: 0;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+    }
+    /* Animated background circles */
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(230,92,46,0.18) 0%, transparent 70%);
+      top: -200px; right: -150px;
+      animation: heroBlobFloat 8s ease-in-out infinite alternate;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,193,7,0.1) 0%, transparent 70%);
+      bottom: -100px; left: -100px;
+      animation: heroBlobFloat 10s ease-in-out infinite alternate-reverse;
+    }
+    @keyframes heroBlobFloat {
+      from { transform: scale(1) translate(0,0); }
+      to   { transform: scale(1.15) translate(20px, 20px); }
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 28px;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .hero-content { flex: 1.3; min-width: 300px; }
+
+    /* Animated badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #ffd6a5;
+      margin-bottom: 1.6rem;
+      letter-spacing: 0.5px;
+    }
+    .hero-badge .badge-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #ff8c42;
+      animation: blink 1.4s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    .hero-content h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.4rem;
+      color: #ffffff;
+    }
+    .hero-content h1 .highlight {
+      color: #ff8c42;
+      position: relative;
+      display: inline-block;
+    }
+    .hero-content h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e65c2e, #ffd166);
+      border-radius: 2px;
+      animation: lineExpand 1.5s ease forwards;
+    }
+    @keyframes lineExpand { from{width:0} to{width:100%} }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.2rem;
+      max-width: 88%;
+      line-height: 1.8;
+    }
+    .hero-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Impact pills row */
+    .hero-impact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+    .impact-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      color: #fff;
+      font-weight: 600;
+    }
+    .impact-pill i { color: #ff8c42; }
+
+    /* Hero right — stats card */
+    .hero-right {
+      flex: 0.85;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .hero-stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .hero-stat-card:hover {
+      transform: translateX(6px);
+      background: rgba(255,255,255,0.13);
+    }
+    .hero-stat-icon {
+      width: 54px; height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #e65c2e, #ff8c42);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: white; flex-shrink: 0;
+    }
+    .hero-stat-num {
+      font-size: 2rem; font-weight: 800; color: #fff;
+      font-family: 'Poppins', sans-serif; line-height: 1;
+    }
+    .hero-stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 2px; }
+
+    /* WhatsApp chip */
     .whatsapp-chip {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: white;
-      padding: 10px 24px;
+      background: rgba(37,211,102,0.12);
+      border: 1px solid rgba(37,211,102,0.3);
+      padding: 10px 22px;
       border-radius: 100px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-      border: 1px solid #e2e8dd;
       font-weight: 600;
     }
-    .whatsapp-chip i {
-      font-size: 1.5rem;
-      color: #25D366;
-    }
-    .whatsapp-chip a {
-      text-decoration: none;
-      color: #1e3a2f;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-    .whatsapp-chip a:hover {
-      color: #25D366;
-    }
-    .hero-img {
-      flex: 0.9;
-      text-align: center;
-    }
-    .hero-img i {
-      font-size: 14rem;
-      color: #fad5bd;
-      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));
-    }
+    .whatsapp-chip i { font-size: 1.4rem; color: #25D366; }
+    .whatsapp-chip span { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+    .whatsapp-chip a { text-decoration: none; color: #7fffb8; font-weight: 700; transition: 0.2s; }
+    .whatsapp-chip a:hover { color: #25D366; }
 
-    /* sections general */
-    section {
-      padding: 5rem 0;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 2.3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #1e3a2f;
-    }
-    .section-sub {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 3rem auto;
-      color: #5b6e5e;
-    }
+    /* ── SECTIONS ── */
+    section{padding:5rem 0;}
+    .section-title{text-align:center;font-size:2.3rem;font-weight:700;margin-bottom:1rem;color:#1e3a2f;}
+    .section-sub{text-align:center;max-width:680px;margin:0 auto 3rem auto;color:#5b6e5e;}
+    .about-grid{display:flex;gap:3rem;flex-wrap:wrap;align-items:center;}
+    .about-text{flex:1;}
+    .about-text p{margin-bottom:1.2rem;font-size:1rem;color:#2d3e31;}
+    .stats{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap;}
+    .stat-item{background:#fff4ed;padding:0.8rem 1.8rem;border-radius:50px;text-align:center;}
+    .stat-number{font-weight:800;font-size:1.8rem;color:#e65c2e;}
+    .about-image{flex:1;background:#fae9df;border-radius:50px;padding:2rem;text-align:center;}
+    .about-image i{font-size:8rem;color:#eab194;}
+    .programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:1.5rem;}
+    .program-card{background:white;border-radius:32px;padding:2rem 1.5rem;box-shadow:0 15px 35px rgba(0,0,0,0.03);transition:all 0.3s ease;border:1px solid #f3ede5;text-align:center;}
+    .program-card:hover{transform:translateY(-8px);border-color:#ffd8c4;box-shadow:0 25px 40px rgba(0,0,0,0.08);}
+    .program-icon{font-size:3rem;background:#fff3eb;width:80px;height:80px;display:flex;align-items:center;justify-content:center;border-radius:40px;margin:0 auto 1.2rem;color:#e65c2e;}
+    .program-card h3{font-size:1.5rem;margin-bottom:0.75rem;}
+    .program-card p{color:#5a6a5e;margin-bottom:1.2rem;}
+    .contact-wrap{background:#fef8f2;border-radius:56px;padding:3rem 2rem;margin-top:1rem;}
+    .contact-flex{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:2rem;}
+    .contact-info{flex:1;}
+    .contact-info h3{font-size:1.7rem;margin-bottom:1rem;}
+    .contact-detail{display:flex;align-items:center;gap:20px;margin:1.5rem 0;background:white;padding:1rem 1.8rem;border-radius:60px;box-shadow:0 2px 6px rgba(0,0,0,0.02);border:1px solid #ffe5d6;}
+    .contact-detail i{font-size:2rem;}
+    .contact-detail .whatsapp-number{font-size:1.3rem;font-weight:700;letter-spacing:0.5px;}
+    .contact-detail a{text-decoration:none;color:#1e3a2f;font-weight:700;}
+    .contact-detail a:hover{color:#25D366;}
+    .contact-detail span{margin-left:8px;font-weight:500;}
+    .contact-cta{text-align:center;flex:0.8;background:white;padding:2rem;border-radius:48px;}
 
-    /* about */
-    .about-grid {
-      display: flex;
-      gap: 3rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .about-text {
-      flex: 1;
-    }
-    .about-text p {
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-      color: #2d3e31;
-    }
-    .stats {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    .stat-item {
-      background: #fff4ed;
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      text-align: center;
-    }
-    .stat-number {
-      font-weight: 800;
-      font-size: 1.8rem;
-      color: #e65c2e;
-    }
-    .about-image {
-      flex: 1;
-      background: #fae9df;
-      border-radius: 50px;
-      padding: 2rem;
-      text-align: center;
-    }
-    .about-image i {
-      font-size: 8rem;
-      color: #eab194;
-    }
+    /* ── MODAL ── */
+    .donation-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.6);backdrop-filter:blur(6px);justify-content:center;align-items:center;z-index:1000;}
+    .modal-content{background:#fffef7;max-width:480px;width:90%;border-radius:48px;padding:2rem 1.8rem;position:relative;box-shadow:0 35px 60px rgba(0,0,0,0.2);animation:fadeSlideUp 0.2s ease;}
+    @keyframes fadeSlideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .modal-content h3{font-size:1.8rem;margin-bottom:0.5rem;color:#1e3a2f;}
+    .modal-close{position:absolute;right:1.5rem;top:1.5rem;font-size:1.5rem;cursor:pointer;color:#8b9a8b;}
+    .form-group{margin-bottom:1.2rem;}
+    .form-group label{font-weight:600;display:block;margin-bottom:6px;}
+    .form-group input,.form-group select{width:100%;padding:12px 16px;border-radius:40px;border:1px solid #e2dacf;font-family:inherit;}
+    .donate-submit{background:linear-gradient(135deg,#e65c2e,#ff7043);width:100%;padding:14px;border:none;border-radius:60px;font-weight:700;color:white;font-size:1rem;cursor:pointer;transition:0.2s;font-family:'Poppins',sans-serif;animation:donatePulse 2s infinite;}
+    .donate-submit:hover{background:linear-gradient(135deg,#bf4a21,#e65c2e);transform:translateY(-2px);}
 
-    /* programs cards */
-    .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-    .program-card {
-      background: white;
-      border-radius: 32px;
-      padding: 2rem 1.5rem;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-      transition: all 0.3s ease;
-      border: 1px solid #f3ede5;
-      text-align: center;
-    }
-    .program-card:hover {
-      transform: translateY(-8px);
-      border-color: #ffd8c4;
-      box-shadow: 0 25px 40px rgba(0,0,0,0.08);
-    }
-    .program-icon {
-      font-size: 3rem;
-      background: #fff3eb;
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 40px;
-      margin: 0 auto 1.2rem;
-      color: #e65c2e;
-    }
-    .program-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .program-card p {
-      color: #5a6a5e;
-      margin-bottom: 1.2rem;
-    }
-    .donate-mini-btn {
-      background: none;
-      border: 1px solid #e65c2e;
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-weight: 600;
-      color: #e65c2e;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .donate-mini-btn:hover {
-      background: #e65c2e;
-      color: white;
-    }
+    footer{background:#1e2c23;color:#cfdfcf;text-align:center;padding:2rem;font-size:0.85rem;}
 
-    /* contact section with whatsapp */
-    .contact-wrap {
-      background: #fef8f2;
-      border-radius: 56px;
-      padding: 3rem 2rem;
-      margin-top: 1rem;
+    @media(max-width:800px){
+      .hero-content h1{font-size:2.2rem;}
+      .navbar{flex-direction:column;}
+      .nav-links{justify-content:center;gap:1rem;}
+      .hero-inner{padding:3rem 20px;flex-direction:column;gap:2rem;}
+      .hero-description{max-width:100%;}
+      .hero-right{width:100%;}
+      .floating-donate{bottom:20px;right:16px;padding:12px 20px;font-size:0.9rem;}
     }
-    .contact-flex {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-    }
-    .contact-info {
-      flex: 1;
-    }
-    .contact-info h3 {
-      font-size: 1.7rem;
-      margin-bottom: 1rem;
-    }
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin: 1.5rem 0;
-      background: white;
-      padding: 1rem 1.8rem;
-      border-radius: 60px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-      border: 1px solid #ffe5d6;
-    }
-    .contact-detail i {
-      font-size: 2rem;
-    }
-    .contact-detail .whatsapp-number {
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-    .contact-detail a {
-      text-decoration: none;
-      color: #1e3a2f;
-      font-weight: 700;
-    }
-    .contact-detail a:hover {
-      color: #25D366;
-    }
-    .contact-detail span {
-      margin-left: 8px;
-      font-weight: 500;
-    }
-    .contact-cta {
-      text-align: center;
-      flex: 0.8;
-      background: white;
-      padding: 2rem;
-      border-radius: 48px;
-    }
-    .contact-cta .btn-primary {
-      margin-top: 1rem;
-    }
-
-    /* donation modal */
-    .donation-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      backdrop-filter: blur(6px);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .modal-content {
-      background: #fffef7;
-      max-width: 480px;
-      width: 90%;
-      border-radius: 48px;
-      padding: 2rem 1.8rem;
-      position: relative;
-      box-shadow: 0 35px 60px rgba(0,0,0,0.2);
-      animation: fadeSlideUp 0.2s ease;
-    }
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .modal-content h3 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: #1e3a2f;
-    }
-    .modal-close {
-      position: absolute;
-      right: 1.5rem;
-      top: 1.5rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #8b9a8b;
-    }
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    .form-group label {
-      font-weight: 600;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .form-group input, .form-group select {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 40px;
-      border: 1px solid #e2dacf;
-      font-family: inherit;
-    }
-    .donate-submit {
-      background: #e65c2e;
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 60px;
-      font-weight: 700;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .donate-submit:hover {
-      background: #bf4a21;
-    }
-    footer {
-      background: #1e2c23;
-      color: #cfdfcf;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-    }
-    @media (max-width: 800px) {
-      .hero-content h1 { font-size: 2.2rem; }
-      .navbar { flex-direction: column; }
-      .nav-links { justify-content: center; gap: 1rem; }
-      .hero-img i { font-size: 8rem; }
-      .contact-detail { flex-wrap: wrap; justify-content: center; text-align: center; }
-    }
-    button {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
+    button{cursor:pointer;}
   </style>
 </head>
 <body>
@@ -506,37 +403,93 @@
         <a href="#about">About</a>
         <a href="#programs">Programs</a>
         <a href="#contact">Connect</a>
-        <button class="donate-btn-nav donate-trigger" id="navDonateBtn"><i class="fas fa-heart"></i> Donate</button>
+        <button class="donate-btn-nav donate-trigger" id="navDonateBtn">
+          <i class="fas fa-heart"></i> Donate Now
+        </button>
       </div>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- Hero Section -->
+
+  <!-- ══ HERO — REDESIGNED ══ -->
   <section id="home" class="hero">
-    <div class="container hero-grid">
+    <div class="hero-inner">
+
+      <!-- Left content -->
       <div class="hero-content">
-        <div class="hero-badge"><i class="fas fa-seedling"></i>  Trust since 2015</div>
-        <h1>Spreading Hope, <span>One Heart</span> at a Time</h1>
-        <p class="hero-description">We Care Foundation is dedicated to empowering underprivileged communities through education, healthcare, and nutrition. Together we transform lives.</p>
-        <div class="btn-group">
-          <button class="btn-primary donate-trigger"><i class="fas fa-hand-holding-usd"></i> Donate Now</button>
-          <a href="https://wa.me/919595944888?text=Hello%20We%20Care%20Foundation%2C%20I%20want%20to%20support%20your%20mission" target="_blank" class="btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Registered Trust since 2015 &nbsp;·&nbsp; 80G Tax Benefits
         </div>
+        <h1>
+          Spreading Hope,<br>
+          <span class="highlight">One Heart</span> at a Time
+        </h1>
+        <p class="hero-description">
+          We Care Foundation empowers underprivileged communities through education, healthcare, and nutrition. Your single donation transforms an entire family.
+        </p>
+
+        <!-- Impact pills -->
+        <div class="hero-impact-row">
+          <div class="impact-pill"><i class="fas fa-check-circle"></i> 12,000+ Lives Touched</div>
+          <div class="impact-pill"><i class="fas fa-check-circle"></i> 25+ Active Projects</div>
+          <div class="impact-pill"><i class="fas fa-check-circle"></i> 150+ Volunteers</div>
+        </div>
+
+        <div class="hero-btn-group">
+          <button class="btn-primary donate-trigger">
+            <i class="fas fa-hand-holding-usd"></i> Donate Now
+          </button>
+          <a href="https://wa.me/919595944888?text=Hello%20We%20Care%20Foundation%2C%20I%20want%20to%20support%20your%20mission" target="_blank" class="btn-outline">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+
         <div class="whatsapp-chip">
           <i class="fab fa-whatsapp"></i>
-          <span>Connect on WhatsApp : </span>
+          <span>Helpline:</span>
           <a href="https://wa.me/919595944888" target="_blank">+91 95959 44888</a>
         </div>
       </div>
-      <div class="hero-img">
-        <i class="fas fa-hands-helping"></i>
+
+      <!-- Right — stat cards -->
+      <div class="hero-right">
+        <div class="hero-stat-card">
+          <div class="hero-stat-icon"><i class="fas fa-users"></i></div>
+          <div>
+            <div class="hero-stat-num">12,000+</div>
+            <div class="hero-stat-label">Lives Touched</div>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-icon"><i class="fas fa-project-diagram"></i></div>
+          <div>
+            <div class="hero-stat-num">25+</div>
+            <div class="hero-stat-label">Active Projects</div>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <div>
+            <div class="hero-stat-num">150+</div>
+            <div class="hero-stat-label">Dedicated Volunteers</div>
+          </div>
+        </div>
+        <div class="hero-stat-card">
+          <div class="hero-stat-icon"><i class="fas fa-donate"></i></div>
+          <div>
+            <div class="hero-stat-num">₹80G</div>
+            <div class="hero-stat-label">Tax Benefit Eligible</div>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
     <div class="container">
       <h2 class="section-title">Who We Are</h2>
@@ -552,14 +505,14 @@
         </div>
         <div class="about-image">
           <i class="fas fa-children"></i>
-          <p style="margin-top: 1rem; font-weight:500;">Building brighter tomorrows</p>
+          <p style="margin-top:1rem;font-weight:500;">Building brighter tomorrows</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Programs Section -->
-  <section id="programs" style="background: #fefaf5;">
+  <!-- Programs -->
+  <section id="programs" style="background:#fefaf5;">
     <div class="container">
       <h2 class="section-title">Our Initiatives</h2>
       <p class="section-sub">From education to emergency relief, we focus on sustainable impact.</p>
@@ -586,7 +539,7 @@
     </div>
   </section>
 
-  <!-- Contact + WhatsApp Section (explicit logo & number) -->
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <div class="contact-wrap">
@@ -611,32 +564,40 @@
             </div>
           </div>
           <div class="contact-cta">
-            <i class="fas fa-hands-clapping" style="font-size: 2.5rem; color:#e65c2e;"></i>
-            <h3 style="margin: 10px 0;">Join the movement</h3>
+            <i class="fas fa-hands-clapping" style="font-size:2.5rem;color:#e65c2e;"></i>
+            <h3 style="margin:10px 0;">Join the movement</h3>
             <p>Every rupee you donate brings smiles & transforms futures.</p>
-            <button class="btn-primary donate-trigger" style="padding: 12px 28px;"><i class="fas fa-gift"></i> Donate Now</button>
-            <p style="margin-top: 18px; font-size:0.8rem;"><i class="fab fa-whatsapp"></i> Scan/Click the WhatsApp number for direct chat</p>
+            <button class="btn-primary donate-trigger" style="padding:12px 28px;margin-top:1rem;">
+              <i class="fas fa-gift"></i> Donate Now
+            </button>
+            <p style="margin-top:18px;font-size:0.8rem;"><i class="fab fa-whatsapp"></i> WhatsApp us for direct support</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="container">
-    <p><i class="fas fa-heart" style="color: #e65c2e;"></i> We Care Foundation — A registered charitable trust (Reg. No. 1289/2015) </p>
-    <p style="margin-top: 0.6rem;">© 2025 | Empowering lives with compassion | Donations eligible for 80G tax benefits</p>
-    <p style="margin-top: 0.6rem; font-size:0.8rem;"><i class="fab fa-whatsapp"></i> WhatsApp Helpline: +91 9595944888</p>
+    <p><i class="fas fa-heart" style="color:#e65c2e;"></i> We Care Foundation — A registered charitable trust (Reg. No. 1289/2015)</p>
+    <p style="margin-top:0.6rem;">© 2025 | Empowering lives with compassion | Donations eligible for 80G tax benefits</p>
+    <p style="margin-top:0.6rem;font-size:0.8rem;"><i class="fab fa-whatsapp"></i> WhatsApp Helpline: +91 9595944888</p>
   </div>
 </footer>
 
-<!-- Donation Modal (demo) -->
+<!-- Floating Donate Button -->
+<button class="floating-donate donate-trigger">
+  <i class="fas fa-heart"></i> Donate Now
+</button>
+
+<!-- Donation Modal -->
 <div id="donationModal" class="donation-modal">
   <div class="modal-content">
     <span class="modal-close" id="closeModalBtn">&times;</span>
     <h3><i class="fas fa-donate"></i> Make a Donation</h3>
-    <p>Your generosity fuels real change. Fill the form (demo mode)</p>
+    <p style="margin-bottom:1.2rem;color:#5b6e5e;">Your generosity fuels real change. Fill the form below.</p>
     <form id="donateForm">
       <div class="form-group">
         <label>Full Name *</label>
@@ -660,14 +621,15 @@
         <label>Custom Amount (₹)</label>
         <input type="number" id="customAmount" placeholder="Enter amount" min="50">
       </div>
-      <button type="submit" class="donate-submit"><i class="fas fa-check-circle"></i> Proceed (Demo)</button>
-      <p style="font-size: 0.7rem; margin-top: 1rem; text-align: center;">⚠️ Demo version — your support matters! Thank you for caring.</p>
+      <button type="submit" class="donate-submit">
+        <i class="fas fa-check-circle"></i> Proceed to Donate
+      </button>
+      <p style="font-size:0.7rem;margin-top:1rem;text-align:center;color:#999;">⚠️ Demo version — official payment gateway coming soon.</p>
     </form>
   </div>
 </div>
 
 <script>
-  // DOM elements
   const modal = document.getElementById('donationModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
   const donateTriggers = document.querySelectorAll('.donate-trigger');
@@ -675,85 +637,36 @@
   const customAmountDiv = document.getElementById('customAmountDiv');
   const donateForm = document.getElementById('donateForm');
 
-  // open modal
-  function openModal() {
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
+  function openModal(){ modal.style.display='flex'; document.body.style.overflow='hidden'; }
+  function closeModal(){ modal.style.display='none'; document.body.style.overflow=''; }
 
-  // attach to all donate buttons
-  donateTriggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal();
-    });
-  });
-
-  // close via X or background click
+  donateTriggers.forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); openModal(); }));
   closeModalBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+  modal.addEventListener('click', e => { if(e.target===modal) closeModal(); });
+
+  amountSelect.addEventListener('change', function(){
+    customAmountDiv.style.display = this.value==='other' ? 'block' : 'none';
   });
 
-  // show custom amount field if other selected
-  amountSelect.addEventListener('change', function() {
-    if (this.value === 'other') {
-      customAmountDiv.style.display = 'block';
-    } else {
-      customAmountDiv.style.display = 'none';
-    }
-  });
-
-  // Donation form submit (demo interaction)
-  donateForm.addEventListener('submit', function(e) {
+  donateForm.addEventListener('submit', function(e){
     e.preventDefault();
-    let donorName = document.getElementById('donorName').value.trim();
+    let name = document.getElementById('donorName').value.trim();
     let amount = amountSelect.value;
-    let customAmt = document.getElementById('customAmount').value;
-    let finalAmount = 0;
-
-    if (amount === 'other') {
-      if (customAmt && parseInt(customAmt) > 0) {
-        finalAmount = parseInt(customAmt);
-      } else {
-        alert('Please enter a valid custom donation amount.');
-        return;
-      }
-    } else {
-      finalAmount = parseInt(amount);
-    }
-
-    if (donorName === '') {
-      alert('Please enter your name to continue.');
-      return;
-    }
-
-    // Demo success message
-    alert(`✨ Thank you ${donorName} for your generous contribution of ₹${finalAmount}! ✨\n\nWe Care Foundation appreciates your compassion. (This is a demo, but your intent truly matters. Official payment gateway coming soon.)`);
-    
-    // reset form and close modal
+    let custom = document.getElementById('customAmount').value;
+    let final = 0;
+    if(amount==='other'){
+      if(custom && parseInt(custom)>0){ final=parseInt(custom); }
+      else{ alert('Please enter a valid custom amount.'); return; }
+    } else { final=parseInt(amount); }
+    if(!name){ alert('Please enter your name.'); return; }
+    alert(`✨ Thank you ${name} for your generous contribution of ₹${final}!\n\nWe Care Foundation truly appreciates your compassion. (Demo — payment gateway coming soon.)`);
     donateForm.reset();
-    customAmountDiv.style.display = 'none';
-    document.getElementById('donorName').value = '';
-    document.getElementById('donorEmail').value = '';
+    customAmountDiv.style.display='none';
     closeModal();
   });
 
-  // close modal when escape pressed
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.style.display === 'flex') {
-      closeModal();
-    }
-  });
-  
-  // optional: remove overflow on close
-  window.addEventListener('load', () => {
-    // set initial select
-    amountSelect.dispatchEvent(new Event('change'));
+  document.addEventListener('keydown', e => {
+    if(e.key==='Escape' && modal.style.display==='flex') closeModal();
   });
 </script>
 </body>
