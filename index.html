@@ -3,447 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>We Care Foundation | Empowering Communities</title>
+  <title>WCF India | Help for the People - wcfindia.in</title>
+  <meta name="description" content="Empowering communities through charitable initiatives. Education, Healthcare, Skill Development & more.">
+  <meta name="keywords" content="nonprofit, charity, community support, education, healthcare, empowerment, volunteer, wcfindia">
+  <meta property="og:title" content="WCF India | Help for the People">
+  <meta property="og:description" content="Empowering communities through compassion. wcfindia.in - Lucknow">
+  <meta property="og:url" content="https://wcfindia.in">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{font-family:'Inter',sans-serif;background:#fefcf5;color:#1e2a3e;line-height:1.5;overflow-x:hidden;}
-    h1,h2,h3,.logo,.nav-links a,.btn,.donate-btn-nav{font-family:'Poppins','Inter',sans-serif;}
+    h1,h2,h3,.logo,.nav-links a,.donate-btn-nav{font-family:'Poppins','Inter',sans-serif;}
     .container{max-width:1280px;margin:0 auto;padding:0 16px;}
     img{max-width:100%;}
 
     /* ══ ANIMATIONS ══ */
-    @keyframes donatePulse{
-      0%{box-shadow:0 0 0 0 rgba(230,92,46,0.55);}
-      60%{box-shadow:0 0 0 14px rgba(230,92,46,0);}
-      100%{box-shadow:0 0 0 0 rgba(230,92,46,0);}
-    }
-    @keyframes heartBeat{
-      0%,100%{transform:scale(1);}
-      25%{transform:scale(1.28);}
-      50%{transform:scale(1);}
-      75%{transform:scale(1.15);}
-    }
-    @keyframes shimmer{
-      0%{background-position:-200% center;}
-      100%{background-position:200% center;}
-    }
-    @keyframes floatBtn{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-5px);}
-    }
+    @keyframes donatePulse{0%{box-shadow:0 0 0 0 rgba(230,92,46,0.55);}60%{box-shadow:0 0 0 14px rgba(230,92,46,0);}100%{box-shadow:0 0 0 0 rgba(230,92,46,0);}}
+    @keyframes heartBeat{0%,100%{transform:scale(1);}25%{transform:scale(1.28);}50%{transform:scale(1);}75%{transform:scale(1.15);}}
+    @keyframes shimmer{0%{background-position:-200% center;}100%{background-position:200% center;}}
+    @keyframes floatBtn{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-    @keyframes heroBlobFloat{
-      from{transform:scale(1) translate(0,0);}
-      to{transform:scale(1.15) translate(20px,20px);}
-    }
+    @keyframes heroBlobFloat{from{transform:scale(1) translate(0,0);}to{transform:scale(1.15) translate(20px,20px);}}
     @keyframes lineExpand{from{width:0}to{width:100%}}
-    @keyframes btnShine{
-      0%{left:-60%;opacity:0;}
-      30%{opacity:1;}
-      60%{left:130%;opacity:0;}
-      100%{left:130%;opacity:0;}
-    }
-    @keyframes fadeSlideUp{
-      from{opacity:0;transform:translateY(30px);}
-      to{opacity:1;transform:translateY(0);}
-    }
-    @keyframes slideDown{
-      from{opacity:0;transform:translateY(-10px);}
-      to{opacity:1;transform:translateY(0);}
-    }
+    @keyframes btnShine{0%{left:-60%;opacity:0;}30%{opacity:1;}60%{left:130%;opacity:0;}100%{left:130%;opacity:0;}}
+    @keyframes fadeSlideUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
-    /* ══ HEADER / NAVBAR ══ */
-    header{
-      background:rgba(255,255,245,0.97);
-      box-shadow:0 2px 20px rgba(0,0,0,0.07);
-      position:sticky;top:0;z-index:500;
-      backdrop-filter:blur(12px);
-    }
-    .navbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 16px;
-      position:relative;
-    }
+    /* ══ HEADER ══ */
+    header{background:rgba(255,255,245,0.97);box-shadow:0 2px 20px rgba(0,0,0,0.07);position:sticky;top:0;z-index:500;backdrop-filter:blur(12px);}
+    .navbar{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;position:relative;}
     .logo{display:flex;align-items:center;gap:10px;}
     .logo i{font-size:1.7rem;color:#e65c2e;background:#ffede5;padding:7px;border-radius:16px;}
     .logo span{font-weight:800;font-size:1.3rem;letter-spacing:-0.3px;color:#1e3a2f;}
     .logo span small{font-size:0.72rem;font-weight:500;display:block;color:#e65c2e;}
 
     /* Hamburger */
-    .ham-btn{
-      display:none;
-      flex-direction:column;
-      gap:5px;
-      background:none;
-      border:1px solid rgba(0,0,0,0.1);
-      padding:8px 10px;
-      border-radius:8px;
-      cursor:pointer;
-    }
+    .ham-btn{display:none;flex-direction:column;gap:5px;background:none;border:1px solid rgba(0,0,0,0.1);padding:8px 10px;border-radius:8px;cursor:pointer;}
     .ham-line{width:22px;height:2px;background:#1e3a2f;border-radius:2px;transition:all 0.3s;}
     .ham-btn.open .ham-line:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
     .ham-btn.open .ham-line:nth-child(2){opacity:0;}
     .ham-btn.open .ham-line:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
 
     .nav-links{display:flex;gap:1.5rem;align-items:center;}
-    .nav-links a{
-      text-decoration:none;font-weight:600;
-      color:#2c3e2f;transition:0.2s;font-size:0.95rem;
-    }
+    .nav-links a{text-decoration:none;font-weight:600;color:#2c3e2f;transition:0.2s;font-size:0.95rem;}
     .nav-links a:hover{color:#e65c2e;}
 
-    /* ══ DONATE BUTTON — ANIMATED ══ */
-    .donate-btn-nav{
-      background:linear-gradient(135deg,#e65c2e,#ff8c42,#e65c2e);
-      background-size:200% auto;
-      color:white!important;
-      padding:9px 20px;
-      border-radius:40px;
-      font-weight:700;
-      font-size:0.9rem;
-      border:none;
-      cursor:pointer;
-      animation:donatePulse 2.2s infinite, shimmer 3s linear infinite;
-      transition:transform 0.2s,box-shadow 0.2s;
-      display:inline-flex;
-      align-items:center;
-      gap:7px;
-      font-family:'Poppins',sans-serif;
-      white-space:nowrap;
-    }
+    /* ══ DONATE BUTTONS — ANIMATED ══ */
+    .donate-btn-nav{background:linear-gradient(135deg,#e65c2e,#ff8c42,#e65c2e);background-size:200% auto;color:white!important;padding:9px 20px;border-radius:40px;font-weight:700;font-size:0.9rem;border:none;cursor:pointer;animation:donatePulse 2.2s infinite,shimmer 3s linear infinite;transition:transform 0.2s,box-shadow 0.2s;display:inline-flex;align-items:center;gap:7px;font-family:'Poppins',sans-serif;white-space:nowrap;}
     .donate-btn-nav i{animation:heartBeat 1.4s ease infinite;}
     .donate-btn-nav:hover{transform:translateY(-2px) scale(1.04);box-shadow:0 10px 25px rgba(230,92,46,0.4);}
 
-    .btn-primary{
-      display:inline-flex;align-items:center;gap:9px;
-      padding:14px 28px;border-radius:60px;
-      font-weight:700;text-decoration:none;font-size:1rem;
-      font-family:'Poppins',sans-serif;
-      position:relative;overflow:hidden;
-      background:linear-gradient(135deg,#e65c2e 0%,#ff7043 50%,#e65c2e 100%);
-      background-size:200% auto;
-      color:white;border:none;cursor:pointer;
-      animation:donatePulse 2s infinite, shimmer 2.5s linear infinite;
-      transition:transform 0.25s,box-shadow 0.25s;
-      white-space:nowrap;
-    }
-    .btn-primary::before{
-      content:'';position:absolute;top:-50%;left:-60%;
-      width:40%;height:200%;
-      background:rgba(255,255,255,0.18);
-      transform:skewX(-20deg);
-      animation:btnShine 2.8s ease-in-out infinite;
-    }
+    .btn-primary{display:inline-flex;align-items:center;gap:9px;padding:14px 28px;border-radius:60px;font-weight:700;text-decoration:none;font-size:1rem;font-family:'Poppins',sans-serif;position:relative;overflow:hidden;background:linear-gradient(135deg,#e65c2e 0%,#ff7043 50%,#e65c2e 100%);background-size:200% auto;color:white;border:none;cursor:pointer;animation:donatePulse 2s infinite,shimmer 2.5s linear infinite;transition:transform 0.25s,box-shadow 0.25s;white-space:nowrap;}
+    .btn-primary::before{content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:rgba(255,255,255,0.18);transform:skewX(-20deg);animation:btnShine 2.8s ease-in-out infinite;}
     .btn-primary i{animation:heartBeat 1.4s ease infinite;}
     .btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 14px 30px rgba(230,92,46,0.45);}
 
-    .btn-outline{
-      display:inline-flex;align-items:center;gap:9px;
-      background:transparent;border:2px solid #e65c2e;color:#e65c2e;
-      padding:12px 24px;border-radius:60px;
-      font-weight:700;text-decoration:none;transition:0.25s;
-      font-size:0.95rem;font-family:'Poppins',sans-serif;white-space:nowrap;
-    }
+    .btn-outline{display:inline-flex;align-items:center;gap:9px;background:transparent;border:2px solid #e65c2e;color:#e65c2e;padding:12px 24px;border-radius:60px;font-weight:700;text-decoration:none;transition:0.25s;font-size:0.95rem;font-family:'Poppins',sans-serif;white-space:nowrap;}
     .btn-outline:hover{background:#e65c2e;color:white;transform:translateY(-2px);}
 
-    .donate-mini-btn{
-      position:relative;overflow:hidden;
-      background:linear-gradient(135deg,#e65c2e,#ff7043);
-      border:none;padding:9px 20px;border-radius:50px;
-      font-weight:700;font-size:0.85rem;color:white;
-      cursor:pointer;font-family:'Poppins',sans-serif;
-      transition:transform 0.2s,box-shadow 0.2s;
-      animation:donatePulse 2.5s infinite;
-    }
+    .donate-mini-btn{position:relative;overflow:hidden;background:linear-gradient(135deg,#e65c2e,#ff7043);border:none;padding:9px 20px;border-radius:50px;font-weight:700;font-size:0.85rem;color:white;cursor:pointer;font-family:'Poppins',sans-serif;transition:transform 0.2s,box-shadow 0.2s;animation:donatePulse 2.5s infinite;}
     .donate-mini-btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(230,92,46,0.35);}
 
-    /* Floating button */
-    .floating-donate{
-      position:fixed;bottom:24px;right:16px;z-index:999;
-      background:linear-gradient(135deg,#e65c2e,#ff7a30);
-      color:white;border:none;border-radius:60px;
-      padding:13px 22px;
-      font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;
-      display:flex;align-items:center;gap:8px;cursor:pointer;
-      animation:donatePulse 2s infinite, floatBtn 3s ease-in-out infinite;
-      box-shadow:0 8px 24px rgba(230,92,46,0.45);
-      transition:transform 0.2s;
-    }
+    .floating-donate{position:fixed;bottom:24px;right:16px;z-index:999;background:linear-gradient(135deg,#e65c2e,#ff7a30);color:white;border:none;border-radius:60px;padding:13px 22px;font-family:'Poppins',sans-serif;font-weight:700;font-size:0.95rem;display:flex;align-items:center;gap:8px;cursor:pointer;animation:donatePulse 2s infinite,floatBtn 3s ease-in-out infinite;box-shadow:0 8px 24px rgba(230,92,46,0.45);transition:transform 0.2s;}
     .floating-donate:hover{transform:scale(1.07);}
     .floating-donate i{animation:heartBeat 1.4s ease infinite;}
 
     /* ══ HERO ══ */
-    .hero{
-      position:relative;overflow:hidden;
-      background:linear-gradient(135deg,#1e3a2f 0%,#2d5a3d 40%,#1a3028 100%);
-      min-height:90vh;display:flex;align-items:center;
-    }
-    .hero::before{
-      content:'';position:absolute;
-      width:600px;height:600px;border-radius:50%;
-      background:radial-gradient(circle,rgba(230,92,46,0.2) 0%,transparent 70%);
-      top:-150px;right:-150px;
-      animation:heroBlobFloat 8s ease-in-out infinite alternate;
-    }
-    .hero::after{
-      content:'';position:absolute;
-      width:400px;height:400px;border-radius:50%;
-      background:radial-gradient(circle,rgba(255,193,7,0.12) 0%,transparent 70%);
-      bottom:-80px;left:-80px;
-      animation:heroBlobFloat 10s ease-in-out infinite alternate-reverse;
-    }
-    .hero-inner{
-      position:relative;z-index:2;width:100%;
-      max-width:1280px;margin:0 auto;
-      padding:60px 16px;
-      display:flex;align-items:center;gap:3rem;flex-wrap:wrap;
-    }
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#1e3a2f 0%,#2d5a3d 40%,#1a3028 100%);min-height:90vh;display:flex;align-items:center;}
+    .hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(230,92,46,0.2) 0%,transparent 70%);top:-150px;right:-150px;animation:heroBlobFloat 8s ease-in-out infinite alternate;}
+    .hero::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,193,7,0.12) 0%,transparent 70%);bottom:-80px;left:-80px;animation:heroBlobFloat 10s ease-in-out infinite alternate-reverse;}
+    .hero-inner{position:relative;z-index:2;width:100%;max-width:1280px;margin:0 auto;padding:60px 16px;display:flex;align-items:center;gap:3rem;flex-wrap:wrap;}
     .hero-content{flex:1.3;min-width:0;}
-    .hero-badge{
-      display:inline-flex;align-items:center;gap:8px;
-      background:rgba(255,255,255,0.1);
-      border:1px solid rgba(255,255,255,0.2);
-      backdrop-filter:blur(8px);
-      padding:7px 18px;border-radius:50px;
-      font-size:0.78rem;font-weight:600;color:#ffd6a5;
-      margin-bottom:1.4rem;letter-spacing:0.5px;
-    }
-    .badge-dot{
-      width:8px;height:8px;border-radius:50%;
-      background:#ff8c42;animation:blink 1.4s infinite;flex-shrink:0;
-    }
-    .hero-content h1{
-      font-size:clamp(2rem,6vw,3.8rem);
-      font-weight:800;line-height:1.15;
-      margin-bottom:1.2rem;color:#fff;
-    }
-    .hero-content h1 .highlight{
-      color:#ff8c42;position:relative;display:inline-block;
-    }
-    .hero-content h1 .highlight::after{
-      content:'';position:absolute;
-      bottom:-4px;left:0;right:0;height:4px;
-      background:linear-gradient(90deg,#e65c2e,#ffd166);
-      border-radius:2px;
-      animation:lineExpand 1.5s ease forwards;
-    }
-    .hero-description{
-      font-size:1rem;
-      color:rgba(255,255,255,0.75);
-      margin-bottom:1.8rem;line-height:1.8;
-    }
-    .hero-impact-row{
-      display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.8rem;
-    }
-    .impact-pill{
-      display:flex;align-items:center;gap:7px;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.15);
-      backdrop-filter:blur(6px);
-      padding:7px 14px;border-radius:50px;
-      font-size:0.82rem;color:#fff;font-weight:600;
-    }
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px);padding:7px 18px;border-radius:50px;font-size:0.78rem;font-weight:600;color:#ffd6a5;margin-bottom:1.4rem;letter-spacing:0.5px;}
+    .badge-dot{width:8px;height:8px;border-radius:50%;background:#ff8c42;animation:blink 1.4s infinite;flex-shrink:0;}
+    .hero-content h1{font-size:clamp(2rem,6vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:1.2rem;color:#fff;}
+    .hero-content h1 .highlight{color:#ff8c42;position:relative;display:inline-block;}
+    .hero-content h1 .highlight::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:4px;background:linear-gradient(90deg,#e65c2e,#ffd166);border-radius:2px;animation:lineExpand 1.5s ease forwards;}
+    .hero-description{font-size:1rem;color:rgba(255,255,255,0.75);margin-bottom:1.8rem;line-height:1.8;}
+    .hero-impact-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.8rem;}
+    .impact-pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(6px);padding:7px 14px;border-radius:50px;font-size:0.82rem;color:#fff;font-weight:600;}
     .impact-pill i{color:#ff8c42;}
-    .hero-btn-group{
-      display:flex;flex-wrap:wrap;gap:12px;margin-bottom:2rem;
-    }
-    .whatsapp-chip{
-      display:inline-flex;align-items:center;gap:10px;
-      background:rgba(37,211,102,0.12);
-      border:1px solid rgba(37,211,102,0.3);
-      padding:9px 18px;border-radius:100px;
-      font-weight:600;flex-wrap:wrap;
-    }
+    .hero-btn-group{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:2rem;}
+    .whatsapp-chip{display:inline-flex;align-items:center;gap:10px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);padding:9px 18px;border-radius:100px;font-weight:600;flex-wrap:wrap;}
     .whatsapp-chip i{font-size:1.3rem;color:#25D366;}
     .whatsapp-chip span{color:rgba(255,255,255,0.7);font-size:0.85rem;}
     .whatsapp-chip a{text-decoration:none;color:#7fffb8;font-weight:700;transition:0.2s;}
     .whatsapp-chip a:hover{color:#25D366;}
 
-    /* Hero stat cards */
-    .hero-right{
-      flex:0.85;min-width:260px;
-      display:flex;flex-direction:column;gap:14px;
-    }
-    .hero-stat-card{
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.14);
-      backdrop-filter:blur(12px);
-      border-radius:20px;padding:1.2rem 1.5rem;
-      display:flex;align-items:center;gap:1rem;
-      transition:transform 0.3s,background 0.3s;
-    }
+    .hero-right{flex:0.85;min-width:260px;display:flex;flex-direction:column;gap:14px;}
+    .hero-stat-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);backdrop-filter:blur(12px);border-radius:20px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:transform 0.3s,background 0.3s;}
     .hero-stat-card:hover{transform:translateX(5px);background:rgba(255,255,255,0.13);}
-    .hero-stat-icon{
-      width:50px;height:50px;border-radius:14px;
-      background:linear-gradient(135deg,#e65c2e,#ff8c42);
-      display:flex;align-items:center;justify-content:center;
-      font-size:1.3rem;color:white;flex-shrink:0;
-    }
+    .hero-stat-icon{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#e65c2e,#ff8c42);display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:white;flex-shrink:0;}
     .hero-stat-num{font-size:1.8rem;font-weight:800;color:#fff;font-family:'Poppins',sans-serif;line-height:1;}
     .hero-stat-label{font-size:0.8rem;color:rgba(255,255,255,0.65);margin-top:2px;}
 
     /* ══ SECTIONS ══ */
     section{padding:4rem 0;}
     .section-title{text-align:center;font-size:clamp(1.8rem,4vw,2.3rem);font-weight:700;margin-bottom:1rem;color:#1e3a2f;}
-    .section-sub{text-align:center;max-width:680px;margin:0 auto 2.5rem;color:#5b6e5e;}
+    .section-sub{text-align:center;max-width:680px;margin:0 auto 2.5rem;color:#5b6e5e;font-size:1rem;}
+
+    /* About */
     .about-grid{display:flex;gap:2.5rem;flex-wrap:wrap;align-items:center;}
     .about-text{flex:1;min-width:0;}
-    .about-text p{margin-bottom:1.2rem;font-size:0.98rem;color:#2d3e31;}
-    .stats{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;}
-    .stat-item{background:#fff4ed;padding:0.8rem 1.4rem;border-radius:50px;text-align:center;flex:1;min-width:90px;}
-    .stat-number{font-weight:800;font-size:1.6rem;color:#e65c2e;}
-    .about-image{flex:1;min-width:200px;background:#fae9df;border-radius:40px;padding:2rem;text-align:center;}
-    .about-image i{font-size:6rem;color:#eab194;}
-    .programs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:1.5rem;}
-    .program-card{background:white;border-radius:28px;padding:1.8rem 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,0.04);transition:all 0.3s;border:1px solid #f3ede5;text-align:center;}
-    .program-card:hover{transform:translateY(-6px);border-color:#ffd8c4;box-shadow:0 20px 35px rgba(0,0,0,0.08);}
-    .program-icon{font-size:2.5rem;background:#fff3eb;width:72px;height:72px;display:flex;align-items:center;justify-content:center;border-radius:36px;margin:0 auto 1rem;color:#e65c2e;}
-    .program-card h3{font-size:1.3rem;margin-bottom:0.6rem;}
-    .program-card p{color:#5a6a5e;margin-bottom:1.2rem;font-size:0.93rem;}
-    .contact-wrap{background:#fef8f2;border-radius:40px;padding:2.5rem 1.5rem;margin-top:1rem;}
+    .about-text p{margin-bottom:1.2rem;font-size:0.98rem;color:#2d3e31;line-height:1.8;}
+    .about-text strong{color:#1e3a2f;}
+
+    /* Values */
+    .values-section{background:#fefaf5;}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:1.5rem;}
+    .value-card{background:white;border-radius:24px;padding:1.8rem 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,0.04);transition:all 0.3s;border:1px solid #f3ede5;text-align:center;}
+    .value-card:hover{transform:translateY(-6px);border-color:#ffd8c4;box-shadow:0 20px 35px rgba(0,0,0,0.08);}
+    .card-icon{font-size:2.2rem;background:#fff3eb;width:68px;height:68px;display:flex;align-items:center;justify-content:center;border-radius:34px;margin:0 auto 1rem;color:#e65c2e;}
+    .value-card h3{font-size:1.2rem;margin-bottom:0.6rem;color:#1e3a2f;font-family:'Poppins',sans-serif;}
+    .value-card p{color:#5a6a5e;font-size:0.9rem;line-height:1.7;}
+
+    /* Services */
+    .service-card{background:white;border-radius:24px;padding:1.8rem 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,0.04);transition:all 0.3s;border:1px solid #f3ede5;text-align:center;}
+    .service-card:hover{transform:translateY(-6px);border-color:#ffd8c4;box-shadow:0 20px 35px rgba(0,0,0,0.08);}
+    .service-card h3{font-size:1.15rem;margin-bottom:0.6rem;color:#1e3a2f;font-family:'Poppins',sans-serif;}
+    .service-card p{color:#5a6a5e;font-size:0.9rem;line-height:1.7;margin-bottom:1.2rem;}
+
+    /* CTA Banner */
+    .cta-banner{background:linear-gradient(135deg,#1e3a2f,#2d5a3d);padding:3.5rem 2rem;text-align:center;border-radius:32px;margin:0 16px;}
+    .cta-banner h2{color:white;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:0.8rem;font-family:'Poppins',sans-serif;}
+    .cta-banner p{color:rgba(255,255,255,0.75);margin-bottom:2rem;font-size:1rem;}
+
+    /* Testimonials */
+    .testimonials-section{background:#fef8f2;}
+    .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem;}
+    .testimonial-card{background:white;border-radius:24px;padding:1.8rem;border:1px solid #f3ede5;box-shadow:0 8px 24px rgba(0,0,0,0.04);transition:transform 0.3s;}
+    .testimonial-card:hover{transform:translateY(-4px);}
+    .testimonial-stars{color:#f59e0b;font-size:1rem;margin-bottom:0.8rem;}
+    .testimonial-card h4{font-size:1.05rem;color:#1e3a2f;margin-bottom:0.6rem;font-family:'Poppins',sans-serif;font-weight:600;}
+    .testimonial-card p{color:#5b6e5e;font-size:0.9rem;line-height:1.7;font-style:italic;}
+    .testimonial-card .author{margin-top:1rem;font-size:0.82rem;color:#e65c2e;font-weight:700;}
+
+    /* Contact */
+    .contact-wrap{background:#fef8f2;border-radius:40px;padding:2.5rem 1.5rem;}
     .contact-flex{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem;}
     .contact-info{flex:1;min-width:0;}
-    .contact-info h3{font-size:1.5rem;margin-bottom:0.8rem;}
-    .contact-detail{display:flex;align-items:center;gap:14px;margin:1.2rem 0;background:white;padding:0.9rem 1.4rem;border-radius:60px;box-shadow:0 2px 6px rgba(0,0,0,0.02);border:1px solid #ffe5d6;flex-wrap:wrap;}
-    .contact-detail i{font-size:1.6rem;flex-shrink:0;}
-    .contact-detail .whatsapp-number{font-size:1.2rem;font-weight:700;}
-    .contact-detail a{text-decoration:none;color:#1e3a2f;font-weight:700;font-size:0.9rem;}
-    .contact-detail a:hover{color:#25D366;}
-    .contact-detail span{font-weight:500;font-size:0.9rem;}
-    .contact-cta{text-align:center;flex:0.8;min-width:240px;background:white;padding:1.8rem;border-radius:36px;}
+    .contact-info h3{font-size:1.5rem;margin-bottom:0.8rem;font-family:'Poppins',sans-serif;color:#1e3a2f;}
+    .contact-info p{color:#5b6e5e;margin-bottom:1rem;font-size:0.95rem;}
+    .contact-detail{display:flex;align-items:center;gap:14px;margin:1rem 0;background:white;padding:0.9rem 1.4rem;border-radius:60px;box-shadow:0 2px 6px rgba(0,0,0,0.02);border:1px solid #ffe5d6;flex-wrap:wrap;}
+    .contact-detail i{font-size:1.4rem;flex-shrink:0;color:#e65c2e;}
+    .contact-detail a{text-decoration:none;color:#1e3a2f;font-weight:600;font-size:0.9rem;transition:0.2s;}
+    .contact-detail a:hover{color:#e65c2e;}
+    .contact-detail span{font-size:0.9rem;color:#2d3e31;}
+    .contact-cta{text-align:center;flex:0.8;min-width:240px;background:white;padding:1.8rem;border-radius:36px;border:1px solid #f3ede5;}
+    .contact-cta h3{margin:10px 0;font-family:'Poppins',sans-serif;color:#1e3a2f;}
+    .contact-cta p{color:#5b6e5e;font-size:0.9rem;margin-bottom:1rem;}
+
+    /* Contact Form */
+    .contact-form{background:white;border-radius:24px;padding:1.8rem;border:1px solid #f3ede5;box-shadow:0 8px 24px rgba(0,0,0,0.04);}
+    .contact-form h3{font-family:'Poppins',sans-serif;color:#1e3a2f;margin-bottom:1.2rem;font-size:1.3rem;}
+    .form-group{margin-bottom:1rem;}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:11px 16px;border:1px solid #e2dacf;border-radius:40px;font-family:'Inter',sans-serif;font-size:0.93rem;color:#1e2a3e;transition:border-color 0.2s;}
+    .form-group textarea{border-radius:16px;resize:vertical;min-height:100px;}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#e65c2e;box-shadow:0 0 0 3px rgba(230,92,46,0.1);}
+    .form-submit{background:linear-gradient(135deg,#e65c2e,#ff7043);width:100%;padding:13px;border:none;border-radius:60px;font-weight:700;color:white;font-size:1rem;cursor:pointer;font-family:'Poppins',sans-serif;transition:0.2s;animation:donatePulse 2s infinite;}
+    .form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(230,92,46,0.35);}
 
     /* ══ MODAL ══ */
-    .donation-modal{
-      display:none;position:fixed;top:0;left:0;
-      width:100%;height:100%;
-      background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);
-      justify-content:center;align-items:flex-end;
-      z-index:1000;
-    }
-    .modal-content{
-      background:#fffef7;
-      width:100%;max-width:520px;
-      border-radius:32px 32px 0 0;
-      padding:1.8rem 1.4rem 2rem;
-      position:relative;
-      box-shadow:0 -10px 50px rgba(0,0,0,0.2);
-      animation:fadeSlideUp 0.25s ease;
-      max-height:92vh;overflow-y:auto;
-    }
-    .modal-content h3{font-size:1.6rem;margin-bottom:0.4rem;color:#1e3a2f;}
-    .modal-handle{
-      width:40px;height:4px;background:#ddd;
-      border-radius:2px;margin:0 auto 1.2rem;
-    }
+    .donation-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);justify-content:center;align-items:flex-end;z-index:1000;}
+    .modal-content{background:#fffef7;width:100%;max-width:520px;border-radius:32px 32px 0 0;padding:1.8rem 1.4rem 2rem;position:relative;box-shadow:0 -10px 50px rgba(0,0,0,0.2);animation:fadeSlideUp 0.25s ease;max-height:92vh;overflow-y:auto;}
+    .modal-content h3{font-size:1.6rem;margin-bottom:0.4rem;color:#1e3a2f;font-family:'Poppins',sans-serif;}
+    .modal-handle{width:40px;height:4px;background:#ddd;border-radius:2px;margin:0 auto 1.2rem;}
     .modal-close{position:absolute;right:1.2rem;top:1.2rem;font-size:1.4rem;cursor:pointer;color:#8b9a8b;background:none;border:none;}
-    .form-group{margin-bottom:1rem;}
-    .form-group label{font-weight:600;display:block;margin-bottom:5px;font-size:0.92rem;}
-    .form-group input,.form-group select{
-      width:100%;padding:11px 15px;
-      border-radius:40px;border:1px solid #e2dacf;
-      font-family:inherit;font-size:0.95rem;
-    }
-    .donate-submit{
-      background:linear-gradient(135deg,#e65c2e,#ff7043);
-      width:100%;padding:14px;border:none;border-radius:60px;
-      font-weight:700;color:white;font-size:1rem;cursor:pointer;
-      transition:0.2s;font-family:'Poppins',sans-serif;
-      animation:donatePulse 2s infinite;
-      display:flex;align-items:center;justify-content:center;gap:8px;
-    }
-    .donate-submit:hover{background:linear-gradient(135deg,#bf4a21,#e65c2e);transform:translateY(-2px);}
+    .donate-submit{background:linear-gradient(135deg,#e65c2e,#ff7043);width:100%;padding:14px;border:none;border-radius:60px;font-weight:700;color:white;font-size:1rem;cursor:pointer;font-family:'Poppins',sans-serif;animation:donatePulse 2s infinite;display:flex;align-items:center;justify-content:center;gap:8px;transition:0.2s;}
+    .donate-submit:hover{transform:translateY(-2px);}
 
-    footer{background:#1e2c23;color:#cfdfcf;text-align:center;padding:2rem 16px;font-size:0.85rem;}
+    /* Footer */
+    footer{background:#1e2c23;color:#cfdfcf;padding:2.5rem 16px 2rem;font-size:0.85rem;}
+    .footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-bottom:2rem;}
+    .footer-col h4{color:#fff;font-family:'Poppins',sans-serif;font-size:1rem;margin-bottom:1rem;font-weight:700;}
+    .footer-col p,.footer-col a{color:#a8c4a8;font-size:0.88rem;line-height:1.8;display:block;text-decoration:none;transition:0.2s;}
+    .footer-col a:hover{color:#ff8c42;}
+    .footer-col i{color:#ff8c42;margin-right:6px;width:16px;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;text-align:center;color:#607d60;font-size:0.82rem;}
+    .footer-bottom a{color:#a8c4a8;text-decoration:none;}
+    .footer-bottom a:hover{color:#ff8c42;}
 
-    /* ══ MOBILE BREAKPOINTS ══ */
+    /* ══ MOBILE ══ */
     @media(max-width:768px){
-      /* navbar */
       .ham-btn{display:flex;}
-      .nav-links{
-        display:none;flex-direction:column;
-        position:absolute;top:100%;left:0;right:0;
-        background:rgba(255,255,245,0.99);
-        padding:1rem 16px 1.5rem;
-        box-shadow:0 8px 20px rgba(0,0,0,0.1);
-        gap:0;border-top:1px solid #f0e8dc;
-        z-index:400;
-      }
+      .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(255,255,245,0.99);padding:1rem 16px 1.5rem;box-shadow:0 8px 20px rgba(0,0,0,0.1);gap:0;border-top:1px solid #f0e8dc;z-index:400;}
       .nav-links.open{display:flex;animation:slideDown 0.2s ease;}
-      .nav-links a{
-        padding:12px 0;border-bottom:1px solid #f0e8dc;
-        width:100%;font-size:1rem;
-      }
-      .nav-links a:last-child{border-bottom:none;}
+      .nav-links a{padding:12px 0;border-bottom:1px solid #f0e8dc;width:100%;font-size:1rem;}
       .donate-btn-nav{width:100%;justify-content:center;margin-top:10px;padding:12px;}
-
-      /* hero */
       .hero{min-height:auto;}
       .hero::before{width:300px;height:300px;top:-80px;right:-80px;}
-      .hero::after{width:250px;height:250px;bottom:-60px;left:-60px;}
+      .hero::after{width:250px;height:250px;}
       .hero-inner{padding:40px 16px 50px;flex-direction:column;gap:2rem;}
       .hero-content{width:100%;}
-      .hero-badge{font-size:0.72rem;padding:6px 14px;}
-      .hero-content h1{font-size:clamp(1.8rem,7vw,2.6rem);}
-      .hero-description{font-size:0.95rem;}
-      .hero-impact-row{gap:8px;}
-      .impact-pill{font-size:0.76rem;padding:6px 12px;}
       .hero-btn-group{flex-direction:column;}
-      .hero-btn-group .btn-primary,
-      .hero-btn-group .btn-outline{width:100%;justify-content:center;}
+      .hero-btn-group .btn-primary,.hero-btn-group .btn-outline{width:100%;justify-content:center;}
       .whatsapp-chip{width:100%;justify-content:center;}
-
-      /* hero stat cards — horizontal scroll row on mobile */
-      .hero-right{
-        width:100%;
-        flex-direction:row;
-        overflow-x:auto;
-        gap:12px;
-        padding-bottom:8px;
-        -webkit-overflow-scrolling:touch;
-        scrollbar-width:none;
-      }
+      .hero-right{width:100%;flex-direction:row;overflow-x:auto;gap:12px;padding-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
       .hero-right::-webkit-scrollbar{display:none;}
-      .hero-stat-card{
-        min-width:160px;flex-shrink:0;
-        border-radius:16px;padding:1rem;
-      }
+      .hero-stat-card{min-width:155px;flex-shrink:0;border-radius:16px;padding:1rem;}
       .hero-stat-num{font-size:1.4rem;}
       .hero-stat-icon{width:42px;height:42px;font-size:1.1rem;border-radius:12px;}
-
-      /* sections */
       section{padding:3rem 0;}
       .about-grid{flex-direction:column;}
-      .about-image{width:100%;border-radius:28px;}
-      .about-image i{font-size:5rem;}
-      .programs-grid{grid-template-columns:1fr;}
+      .cta-banner{margin:0 8px;border-radius:24px;padding:2.5rem 1.2rem;}
       .contact-flex{flex-direction:column;}
       .contact-cta{width:100%;}
       .contact-wrap{border-radius:24px;padding:1.8rem 1rem;}
-      .contact-detail{border-radius:16px;padding:0.9rem 1rem;}
-
-      /* floating donate */
-      .floating-donate{
-        bottom:16px;right:12px;
-        padding:11px 18px;font-size:0.88rem;
-      }
-
-      /* modal — full bottom sheet */
-      .donation-modal{align-items:flex-end;}
-      .modal-content{border-radius:28px 28px 0 0;padding:1.5rem 1rem 2rem;}
+      .floating-donate{bottom:16px;right:12px;padding:11px 18px;font-size:0.88rem;}
     }
-
     @media(max-width:400px){
       .hero-content h1{font-size:1.7rem;}
       .section-title{font-size:1.6rem;}
-      .stat-item{padding:0.6rem 1rem;}
-      .stat-number{font-size:1.4rem;}
     }
-
     button{cursor:pointer;}
   </style>
 </head>
@@ -455,7 +229,7 @@
     <div class="navbar">
       <div class="logo">
         <i class="fas fa-hand-holding-heart"></i>
-        <span>WE CARE <small>Foundation</small></span>
+        <span>WCF INDIA <small>wcfindia.in</small></span>
       </div>
       <button class="ham-btn" id="hamBtn" aria-label="Menu">
         <span class="ham-line"></span>
@@ -464,9 +238,10 @@
       </button>
       <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#contact">Connect</a>
+        <a href="#about">About Us</a>
+        <a href="#values">Values</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
         <button class="donate-btn-nav donate-trigger">
           <i class="fas fa-heart"></i> Donate Now
         </button>
@@ -483,145 +258,252 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-dot"></span>
-          Registered Trust since 2015 &nbsp;·&nbsp; 80G Tax Benefits
+          Help for the People &nbsp;·&nbsp; Lucknow, India
         </div>
-        <h1>Spreading Hope,<br><span class="highlight">One Heart</span> at a Time</h1>
-        <p class="hero-description">We Care Foundation empowers underprivileged communities through education, healthcare, and nutrition. Your donation transforms an entire family.</p>
+        <h1>Empowering Communities<br>Through <span class="highlight">Compassion</span></h1>
+        <p class="hero-description">wcfindia.in is dedicated to fostering community support through education, healthcare, and essential services. Together, we can transform lives and build stronger communities.</p>
         <div class="hero-impact-row">
-          <div class="impact-pill"><i class="fas fa-check-circle"></i> 12,000+ Lives</div>
-          <div class="impact-pill"><i class="fas fa-check-circle"></i> 25+ Projects</div>
-          <div class="impact-pill"><i class="fas fa-check-circle"></i> 150+ Volunteers</div>
+          <div class="impact-pill"><i class="fas fa-check-circle"></i> Education Programs</div>
+          <div class="impact-pill"><i class="fas fa-check-circle"></i> Healthcare Initiatives</div>
+          <div class="impact-pill"><i class="fas fa-check-circle"></i> Skill Development</div>
         </div>
         <div class="hero-btn-group">
           <button class="btn-primary donate-trigger">
             <i class="fas fa-hand-holding-usd"></i> Donate Now
           </button>
-          <a href="https://wa.me/919595944888?text=Hello%20We%20Care%20Foundation" target="_blank" class="btn-outline">
+          <a href="https://wa.me/919598944888?text=Hello%20WCF%20India%2C%20I%20want%20to%20support%20your%20mission" target="_blank" class="btn-outline">
             <i class="fab fa-whatsapp"></i> WhatsApp Us
           </a>
         </div>
         <div class="whatsapp-chip">
           <i class="fab fa-whatsapp"></i>
           <span>Helpline:</span>
-          <a href="https://wa.me/919595944888" target="_blank">+91 95959 44888</a>
+          <a href="https://wa.me/919598944888" target="_blank">+91 95989 44888</a>
         </div>
       </div>
 
-      <!-- Stat cards — horizontal scroll on mobile -->
       <div class="hero-right">
         <div class="hero-stat-card">
-          <div class="hero-stat-icon"><i class="fas fa-users"></i></div>
-          <div>
-            <div class="hero-stat-num">12k+</div>
-            <div class="hero-stat-label">Lives Touched</div>
-          </div>
+          <div class="hero-stat-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div><div class="hero-stat-num">Education</div><div class="hero-stat-label">For Underprivileged</div></div>
         </div>
         <div class="hero-stat-card">
-          <div class="hero-stat-icon"><i class="fas fa-project-diagram"></i></div>
-          <div>
-            <div class="hero-stat-num">25+</div>
-            <div class="hero-stat-label">Projects</div>
-          </div>
+          <div class="hero-stat-icon"><i class="fas fa-heartbeat"></i></div>
+          <div><div class="hero-stat-num">Healthcare</div><div class="hero-stat-label">Medical Camps</div></div>
         </div>
         <div class="hero-stat-card">
-          <div class="hero-stat-icon"><i class="fas fa-hand-holding-heart"></i></div>
-          <div>
-            <div class="hero-stat-num">150+</div>
-            <div class="hero-stat-label">Volunteers</div>
-          </div>
+          <div class="hero-stat-icon"><i class="fas fa-tools"></i></div>
+          <div><div class="hero-stat-num">Skills</div><div class="hero-stat-label">Vocational Training</div></div>
         </div>
         <div class="hero-stat-card">
-          <div class="hero-stat-icon"><i class="fas fa-donate"></i></div>
-          <div>
-            <div class="hero-stat-num">80G</div>
-            <div class="hero-stat-label">Tax Benefit</div>
-          </div>
+          <div class="hero-stat-icon"><i class="fas fa-utensils"></i></div>
+          <div><div class="hero-stat-num">Nutrition</div><div class="hero-stat-label">Food Support</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ══ ABOUT ══ -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title">Who We Are</h2>
+      <h2 class="section-title">About Us</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p><strong>We Care Foundation</strong> is a registered non-profit trust working relentlessly for the upliftment of marginalized children, families, and elderly.</p>
-          <p>With grassroots projects across urban & rural regions, we have impacted thousands of lives. Every contribution fuels our journey toward a compassionate society.</p>
-          <div class="stats">
-            <div class="stat-item"><span class="stat-number">25+</span><br>Projects</div>
-            <div class="stat-item"><span class="stat-number">12k+</span><br>Lives</div>
-            <div class="stat-item"><span class="stat-number">150+</span><br>Volunteers</div>
+          <p><strong>Help for the People</strong> is a dedicated charitable trust committed to fostering a sense of community and support for those in need. We understand that every act of kindness can transform lives and build stronger communities.</p>
+          <p>Our vision is a world where everyone has the opportunity to thrive, and we work tirelessly to make this a reality through <strong>education, healthcare, and other essential services.</strong></p>
+          <p>Together, we can empower individuals and uplift families through the ripple effect of giving. From urban to rural regions, our grassroots projects create lasting change across Lucknow and beyond.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:1.5rem;">
+            <div style="background:#fff4ed;padding:0.8rem 1.4rem;border-radius:50px;text-align:center;border:1px solid #ffd8c4;">
+              <div style="font-weight:800;font-size:1.6rem;color:#e65c2e;">25+</div>
+              <div style="font-size:0.82rem;color:#5b6e5e;">Active Projects</div>
+            </div>
+            <div style="background:#fff4ed;padding:0.8rem 1.4rem;border-radius:50px;text-align:center;border:1px solid #ffd8c4;">
+              <div style="font-weight:800;font-size:1.6rem;color:#e65c2e;">12k+</div>
+              <div style="font-size:0.82rem;color:#5b6e5e;">Lives Touched</div>
+            </div>
+            <div style="background:#fff4ed;padding:0.8rem 1.4rem;border-radius:50px;text-align:center;border:1px solid #ffd8c4;">
+              <div style="font-weight:800;font-size:1.6rem;color:#e65c2e;">150+</div>
+              <div style="font-size:0.82rem;color:#5b6e5e;">Volunteers</div>
+            </div>
           </div>
         </div>
-        <div class="about-image">
-          <i class="fas fa-children"></i>
-          <p style="margin-top:1rem;font-weight:500;">Building brighter tomorrows</p>
+        <div style="flex:1;min-width:220px;background:linear-gradient(135deg,#fae9df,#fdf3ee);border-radius:32px;padding:2.5rem;text-align:center;">
+          <i class="fas fa-children" style="font-size:6rem;color:#eab194;"></i>
+          <p style="margin-top:1.2rem;font-weight:600;color:#1e3a2f;font-size:1rem;">Building brighter tomorrows</p>
+          <p style="color:#5b6e5e;font-size:0.88rem;margin-top:0.5rem;">One community at a time</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Programs -->
-  <section id="programs" style="background:#fefaf5;">
+  <!-- ══ VALUES ══ -->
+  <section id="values" class="values-section">
     <div class="container">
-      <h2 class="section-title">Our Initiatives</h2>
-      <p class="section-sub">From education to emergency relief, we focus on sustainable impact.</p>
-      <div class="programs-grid">
-        <div class="program-card">
-          <div class="program-icon"><i class="fas fa-book-open"></i></div>
-          <h3>Education for All</h3>
-          <p>Providing learning resources, scholarships, and digital access to children in need.</p>
-          <button class="donate-mini-btn donate-trigger">Support this cause</button>
+      <h2 class="section-title">Our Core Values</h2>
+      <p class="section-sub">The principles that guide everything we do at wcfindia.in</p>
+      <div class="cards-grid">
+        <div class="value-card">
+          <div class="card-icon"><i class="fas fa-shield-heart"></i></div>
+          <h3>Compassion</h3>
+          <p>We believe that every act of kindness counts and works towards fostering a caring environment for all.</p>
         </div>
-        <div class="program-card">
-          <div class="program-icon"><i class="fas fa-heartbeat"></i></div>
-          <h3>Health & Nutrition</h3>
-          <p>Medical camps, nutritious meals, and mental wellness support for vulnerable families.</p>
-          <button class="donate-mini-btn donate-trigger">Donate for Health</button>
+        <div class="value-card">
+          <div class="card-icon"><i class="fas fa-users"></i></div>
+          <h3>Integrity</h3>
+          <p>We operate with transparency and uphold the highest standards in our mission and all our initiatives.</p>
         </div>
-        <div class="program-card">
-          <div class="program-icon"><i class="fas fa-hand-holding-water"></i></div>
-          <h3>Women Empowerment</h3>
-          <p>Skill development, micro-enterprise support, and creating sustainable income sources.</p>
-          <button class="donate-mini-btn donate-trigger">Empower Today</button>
+        <div class="value-card">
+          <div class="card-icon"><i class="fas fa-trophy"></i></div>
+          <h3>Empowerment</h3>
+          <p>Our goal is to empower individuals and communities to thrive independently with dignity and hope.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- ══ SERVICES ══ -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-sub">A variety of initiatives aimed at making a positive impact in our communities</p>
+      <div class="cards-grid">
+        <div class="service-card">
+          <div class="card-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Empowering Through Action</h3>
+          <p>We offer a variety of initiatives aimed at making a positive impact in our communities across Lucknow.</p>
+          <button class="donate-mini-btn donate-trigger">Support Us</button>
+        </div>
+        <div class="service-card">
+          <div class="card-icon"><i class="fas fa-book-open"></i></div>
+          <h3>Education Programs</h3>
+          <p>Delivering educational resources and support to underprivileged children to help them succeed in life.</p>
+          <button class="donate-mini-btn donate-trigger">Support Education</button>
+        </div>
+        <div class="service-card">
+          <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3>Healthcare Initiatives</h3>
+          <p>Providing essential medical care and health education to those in need through regular medical camps.</p>
+          <button class="donate-mini-btn donate-trigger">Support Healthcare</button>
+        </div>
+        <div class="service-card">
+          <div class="card-icon"><i class="fas fa-pen-ruler"></i></div>
+          <h3>Skill Development</h3>
+          <p>Empowering individuals through vocational training and skill enhancement programs for sustainable income.</p>
+          <button class="donate-mini-btn donate-trigger">Support Skills</button>
+        </div>
+        <div class="service-card">
+          <div class="card-icon"><i class="fas fa-utensils"></i></div>
+          <h3>Food & Nutrition Support</h3>
+          <p>Offering nutritional assistance and meals to families facing food insecurity and economic hardship.</p>
+          <button class="donate-mini-btn donate-trigger">Feed a Family</button>
+        </div>
+        <div class="service-card">
+          <div class="card-icon"><i class="fas fa-headset"></i></div>
+          <h3>Community Support</h3>
+          <p>Connecting families with resources and services to improve their quality of life and well-being.</p>
+          <button class="donate-mini-btn donate-trigger">Get Involved</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section style="padding:3rem 0;">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Join Us in Making a Difference</h2>
+        <p>Together, we can empower lives and build a brighter future for every community.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+          <button class="btn-primary donate-trigger"><i class="fas fa-hand-holding-usd"></i> Donate Now</button>
+          <a href="#contact" class="btn-outline" style="border-color:rgba(255,255,255,0.4);color:white;">
+            <i class="fas fa-envelope"></i> Get In Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">Testimonials</h2>
+      <p class="section-sub">Real stories from people whose lives have been touched by wcfindia.in</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <h4>A Truly Inspiring Mission</h4>
+          <p>"Helping others through wcfindia.in has changed my life and countless others. Their commitment to compassion is unmatched."</p>
+          <div class="author">— Community Volunteer</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <h4>Community That Cares</h4>
+          <p>"I've witnessed the positive change in my neighborhood thanks to their initiatives. It's more than charity — it's building a stronger community."</p>
+          <div class="author">— Lucknow Resident</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <h4>Empowering Lives</h4>
+          <p>"The education programs they provide have helped children in my area find hope for a better future. Thank you, wcfindia.in!"</p>
+          <div class="author">— Parent, Lucknow</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
   <section id="contact">
     <div class="container">
+      <h2 class="section-title">Get in Touch with Us</h2>
+      <p class="section-sub">Your support and queries matter — let's make a difference together.</p>
       <div class="contact-wrap">
         <div class="contact-flex">
           <div class="contact-info">
-            <h3><i class="fas fa-phone-alt"></i> Reach out to us</h3>
-            <p>Your support and queries matter — let's make a difference together.</p>
+            <h3><i class="fas fa-phone-alt" style="color:#e65c2e;"></i> Reach Out to Us</h3>
+            <p>We're always happy to hear from you — volunteers, donors, and community members welcome.</p>
             <div class="contact-detail">
-              <i class="fab fa-whatsapp" style="color:#25D366;"></i>
+              <i class="fab fa-whatsapp" style="color:#25D366;font-size:1.6rem;"></i>
               <div>
-                <div class="whatsapp-number">+91 95959 44888</div>
-                <a href="https://wa.me/919595944888" target="_blank">Chat on WhatsApp <i class="fas fa-external-link-alt"></i></a>
+                <div style="font-weight:700;font-size:1.1rem;color:#1e3a2f;">+91 95989 44888</div>
+                <a href="https://wa.me/919598944888" target="_blank" style="color:#25D366;">Chat on WhatsApp →</a>
               </div>
             </div>
             <div class="contact-detail">
               <i class="fas fa-envelope"></i>
-              <span>care@wecarefoundation.org</span>
+              <a href="mailto:info@wcfindia.in">info@wcfindia.in</a>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919598944888">+91 95989 44888</a>
             </div>
             <div class="contact-detail">
               <i class="fas fa-map-marker-alt"></i>
-              <span>Mumbai | Delhi | Bangalore</span>
+              <span>226002, Lucknow, Uttar Pradesh, India</span>
             </div>
           </div>
-          <div class="contact-cta">
-            <i class="fas fa-hands-clapping" style="font-size:2.2rem;color:#e65c2e;"></i>
-            <h3 style="margin:10px 0;">Join the movement</h3>
-            <p>Every rupee transforms futures.</p>
-            <button class="btn-primary donate-trigger" style="padding:12px 24px;margin-top:1rem;width:100%;justify-content:center;">
-              <i class="fas fa-gift"></i> Donate Now
-            </button>
+
+          <div class="contact-form" style="flex:0.9;min-width:260px;">
+            <h3><i class="fas fa-paper-plane" style="color:#e65c2e;"></i> Send a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Company / Organization">
+              </div>
+              <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Email Address">
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Your Message" rows="4"></textarea>
+              </div>
+              <button type="submit" class="form-submit">
+                <i class="fas fa-paper-plane"></i> Submit Inquiry
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -630,11 +512,41 @@
 
 </main>
 
+<!-- ══ FOOTER ══ -->
 <footer>
-  <div class="container">
-    <p><i class="fas fa-heart" style="color:#e65c2e;"></i> We Care Foundation — Reg. No. 1289/2015</p>
-    <p style="margin-top:0.6rem;">© 2025 | Empowering lives | 80G Tax Benefits</p>
-    <p style="margin-top:0.6rem;font-size:0.8rem;"><i class="fab fa-whatsapp"></i> +91 9595944888</p>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4><i class="fas fa-hand-holding-heart" style="color:#e65c2e;"></i> WCF India</h4>
+      <p>wcfindia.in — Helping for the People, Empowering for All. A registered charitable trust dedicated to community upliftment.</p>
+      <p style="margin-top:0.8rem;"><i class="fas fa-map-marker-alt"></i> 226002, Lucknow, India</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#values">Our Values</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <a href="#services">Education Programs</a>
+      <a href="#services">Healthcare Initiatives</a>
+      <a href="#services">Skill Development</a>
+      <a href="#services">Food & Nutrition</a>
+      <a href="#services">Community Support</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <a href="tel:+919598944888"><i class="fas fa-phone"></i> +91 95989 44888</a>
+      <a href="mailto:info@wcfindia.in"><i class="fas fa-envelope"></i> info@wcfindia.in</a>
+      <a href="https://wa.me/919598944888" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+      <p style="margin-top:0.8rem;font-size:0.82rem;"><a href="/legal-notice">Legal Notice</a> &nbsp;|&nbsp; <a href="/privacy">Privacy Policy</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 wcfindia.in — Help for the People | Empowering Communities Through Compassion</p>
+    <p style="margin-top:0.4rem;"><i class="fab fa-whatsapp"></i> WhatsApp Helpline: +91 95989 44888 &nbsp;|&nbsp; Lucknow, India</p>
   </div>
 </footer>
 
@@ -643,53 +555,52 @@
   <i class="fas fa-heart"></i> Donate
 </button>
 
-<!-- Modal — Bottom Sheet on Mobile -->
+<!-- ══ DONATION MODAL ══ -->
 <div id="donationModal" class="donation-modal">
   <div class="modal-content">
     <div class="modal-handle"></div>
     <button class="modal-close" id="closeModalBtn">&times;</button>
-    <h3><i class="fas fa-donate"></i> Make a Donation</h3>
-    <p style="margin-bottom:1.2rem;color:#5b6e5e;font-size:0.9rem;">Your generosity fuels real change.</p>
+    <h3><i class="fas fa-donate" style="color:#e65c2e;"></i> Make a Donation</h3>
+    <p style="margin-bottom:1.2rem;color:#5b6e5e;font-size:0.9rem;">Your generosity empowers communities across Lucknow.</p>
     <form id="donateForm">
       <div class="form-group">
-        <label>Full Name *</label>
-        <input type="text" id="donorName" placeholder="e.g., Sunita Sharma" required>
+        <label style="font-weight:600;display:block;margin-bottom:5px;font-size:0.92rem;">Full Name *</label>
+        <input type="text" id="donorName" placeholder="e.g., Ramesh Kumar" required style="padding:11px 16px;border:1px solid #e2dacf;border-radius:40px;font-family:inherit;font-size:0.93rem;width:100%;">
       </div>
       <div class="form-group">
-        <label>Email address</label>
-        <input type="email" id="donorEmail" placeholder="you@example.com">
+        <label style="font-weight:600;display:block;margin-bottom:5px;font-size:0.92rem;">Email</label>
+        <input type="email" id="donorEmail" placeholder="you@example.com" style="padding:11px 16px;border:1px solid #e2dacf;border-radius:40px;font-family:inherit;font-size:0.93rem;width:100%;">
       </div>
       <div class="form-group">
-        <label>Donation Amount (₹)</label>
-        <select id="donationAmount">
+        <label style="font-weight:600;display:block;margin-bottom:5px;font-size:0.92rem;">Donation Amount (₹)</label>
+        <select id="donationAmount" style="padding:11px 16px;border:1px solid #e2dacf;border-radius:40px;font-family:inherit;font-size:0.93rem;width:100%;background:white;">
           <option value="500">₹500 – School kit for a child</option>
-          <option value="1000" selected>₹1,000 – Monthly nutrition</option>
+          <option value="1000" selected>₹1,000 – Monthly nutrition support</option>
           <option value="2500">₹2,500 – Educational scholarship</option>
-          <option value="5000">₹5,000 – Medical camp</option>
+          <option value="5000">₹5,000 – Medical camp sponsorship</option>
           <option value="other">Other amount</option>
         </select>
       </div>
       <div class="form-group" id="customAmountDiv" style="display:none;">
-        <label>Custom Amount (₹)</label>
-        <input type="number" id="customAmount" placeholder="Enter amount" min="50">
+        <label style="font-weight:600;display:block;margin-bottom:5px;font-size:0.92rem;">Custom Amount (₹)</label>
+        <input type="number" id="customAmount" placeholder="Enter amount" min="50" style="padding:11px 16px;border:1px solid #e2dacf;border-radius:40px;font-family:inherit;font-size:0.93rem;width:100%;">
       </div>
       <button type="submit" class="donate-submit">
         <i class="fas fa-check-circle"></i> Proceed to Donate
       </button>
-      <p style="font-size:0.72rem;margin-top:1rem;text-align:center;color:#aaa;">Demo version — payment gateway coming soon.</p>
+      <p style="font-size:0.72rem;margin-top:1rem;text-align:center;color:#aaa;">Demo version — official payment gateway coming soon.</p>
     </form>
   </div>
 </div>
 
 <script>
-  // ── Hamburger Menu ──
+  // Hamburger
   const hamBtn = document.getElementById('hamBtn');
   const navLinks = document.getElementById('navLinks');
   hamBtn.addEventListener('click', () => {
     hamBtn.classList.toggle('open');
     navLinks.classList.toggle('open');
   });
-  // Close nav on link click
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       hamBtn.classList.remove('open');
@@ -697,7 +608,7 @@
     });
   });
 
-  // ── Modal ──
+  // Modal
   const modal = document.getElementById('donationModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
   const donateTriggers = document.querySelectorAll('.donate-trigger');
@@ -710,7 +621,6 @@
 
   donateTriggers.forEach(btn => btn.addEventListener('click', e => {
     e.preventDefault(); openModal();
-    // close nav if open
     hamBtn.classList.remove('open');
     navLinks.classList.remove('open');
   }));
@@ -730,13 +640,20 @@
     let final = 0;
     if(amount==='other'){
       if(custom && parseInt(custom)>0){ final=parseInt(custom); }
-      else{ alert('Please enter a valid custom amount.'); return; }
+      else{ alert('Please enter a valid amount.'); return; }
     } else { final=parseInt(amount); }
     if(!name){ alert('Please enter your name.'); return; }
-    alert(`✨ Thank you ${name}!\nYour contribution of ₹${final} means the world.\n(Demo mode — payment gateway coming soon)`);
+    alert(`✨ Thank you ${name}!\nYour contribution of ₹${final} empowers lives across Lucknow.\n(Demo — payment gateway coming soon)`);
     donateForm.reset();
     customAmountDiv.style.display='none';
     closeModal();
+  });
+
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thank you for reaching out to wcfindia.in! We will get back to you soon.');
+    this.reset();
   });
 </script>
 </body>
